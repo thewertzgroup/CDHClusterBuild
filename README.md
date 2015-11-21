@@ -58,6 +58,11 @@ sys	0m0.231s
 
 ## TeraGen:
 
+[hdfs@cdh-test-edge ~]$ time yarn jar /opt/cloudera/parcels/CDH/jars/hadoop-examples.jar teragen 10000000000 /user/hduser/terasort-input >TeraGen-4DataNodes.out 2>&1
+
+```
+```
+
 ## TeraSort:
 
 ## TeraValidate:
