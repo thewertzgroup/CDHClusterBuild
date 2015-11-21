@@ -58,7 +58,7 @@ sys	0m0.231s
 
 ## TeraGen:
 
-[hdfs@cdh-test-edge ~]$ time yarn jar /opt/cloudera/parcels/CDH/jars/hadoop-examples.jar teragen 10000000000 /user/hduser/terasort-input >TeraGen-4DataNodes.out 2>&1
+[hdfs@cdh-test-edge ~]$ time yarn jar /opt/cloudera/parcels/CDH/jars/hadoop-examples.jar teragen -D mapreduce.job.reduces=4 5000000000 /user/hduser/terasort-input >TeraGen-4DataNodes.out 2>&1
 
 ![](https://github.com/thewertzgroup/CDHClusterBuild/blob/master/images/TeraGen-4DataNodes-RAID5-1GbE.png)
 ```
