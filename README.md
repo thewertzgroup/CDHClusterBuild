@@ -70,7 +70,7 @@ sys	0m2.171s
 
 ## TeraSort:
 
-[hdfs@cdh-test-edge ~]$ time yarn jar /opt/cloudera/parcels/CDH/jars/hadoop-examples.jar terasort /user/hduser/terasort-input /user/hduser/terasort-output >TeraSort-4DataNodes.out 
+[hdfs@cdh-test-edge ~]$ time yarn jar /opt/cloudera/parcels/CDH/jars/hadoop-examples.jar terasort /user/hduser/terasort-input /user/hduser/terasort-output >TeraSort-4DataNodes.out 2>&1
 
 ![]()
 ```
