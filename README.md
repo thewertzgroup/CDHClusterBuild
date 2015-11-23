@@ -66,6 +66,12 @@ sys	0m0.231s
 
 ## TeraSort:
 
+[hdfs@cdh-test-edge ~]$ time yarn jar /opt/cloudera/parcels/CDH/jars/hadoop-examples.jar terasort /user/hduser/terasort-input /user/hduser/terasort-output >TeraSort-4DataNodes.out 
+
+![]()
+```
+```
+
 ## TeraValidate:
 
 # 6 Data Nodes on RAID 5
