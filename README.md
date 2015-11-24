@@ -1,13 +1,61 @@
 # CDHClusterBuild
 
-# 6 Data Nodes on 3 120GB JBOD
+## OS Configuration
 
-### Sync /etc/hosts
-### Disable selinux
-### Set swappiness = 10
-### Disable Transparent Huge Pages
-### Disable iptables
-### Sync network time
+- Edit networking
+```
+vi /etc/sysconfig/network-scripts/ifcfg-eth0
+```
+- Sync /etc/hosts
+```
+vi /etc/hosts
+```
+- Disable selinux
+```
+vi /etc/selinux/config
+
+SELINUX=disabled
+```
+- Set swappiness = 10
+```
+Cloudera recommends setting /proc/sys/vm/swappiness to at most 10. Current setting is 60. Use the sysctl command to change this setting at runtime and edit /etc/sysctl.conf for this setting to be saved after a reboot. You may continue with installation, but you may run into issues with Cloudera Manager reporting that your hosts are unhealthy because they are swapping. The following hosts are affected: 
+
+http://askubuntu.com/questions/103915/how-do-i-configure-swappiness
+
+sysctl vm.swappiness=10
+cat /proc/sys/vm/swappiness
+
+vi /etc/sysctl.conf
+
+# Set swappiness to Cloudera recommendation
+vm.swappiness=10
+```
+- Disable Transparent Huge Pages
+```
+Transparent Huge Pages is enabled and can cause significant performance problems. Kernel with release 'CentOS release 6.7 (Final)' and version '2.6.32-573.8.1.el6.x86_64' has enabled set to '[always] madvise never' and defrag set to '[always] madvise never'. Run "echo never > /sys/kernel/mm/redhat_transparent_hugepage/defrag" to disable this, then add the same command to an init script such as /etc/rc.local so it will be set upon system reboot. Alternatively, upgrade to RHEL 6.5 or later, which does not have this bug. The following hosts are affected: 
+
+echo never > /sys/kernel/mm/redhat_transparent_hugepage/defrag
+echo "echo never > /sys/kernel/mm/redhat_transparent_hugepage/defrag" >> /etc/rc.local
+```
+- Disable iptables
+```
+service iptables stop
+chkconfig iptables off
+```
+- Update OS
+```
+yum update
+```
+- Sync network time
+```
+http://www.cyberciti.biz/faq/howto-install-ntp-to-synchronize-server-clock/
+
+yum install ntp ntpdate ntp-doc
+chkconfig ntpd on
+ntpdate pool.ntp.org
+/etc/init.d/ntpd start
+```
+# 6 Data Nodes on 3 120GB JBOD
 
 # 4 Data Nodes on RAID 5
 
