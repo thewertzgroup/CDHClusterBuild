@@ -1,5 +1,14 @@
 # CDHClusterBuild
 
+# 6 Data Nodes on 3 120GB JBOD
+
+### Sync /etc/hosts
+### Disable selinux
+### Set swappiness = 10
+### Disable Transparent Huge Pages
+### Disable iptables
+### Sync network time
+
 # 4 Data Nodes on RAID 5
 
 
