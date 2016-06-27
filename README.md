@@ -46,7 +46,6 @@ chkconfig iptables --list
 service ip6tables stop
 chkconfig ip6tables off
 chkconfig ip6tables --list
-
 ```
 - Update OS
 ```
