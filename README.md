@@ -41,6 +41,12 @@ echo "echo never > /sys/kernel/mm/redhat_transparent_hugepage/defrag" >> /etc/rc
 ```
 service iptables stop
 chkconfig iptables off
+chkconfig iptables --list
+
+service ip6tables stop
+chkconfig ip6tables off
+chkconfig ip6tables --list
+
 ```
 - Update OS
 ```
