@@ -76,10 +76,7 @@ chkconfig ntpd on
 ntpdate pool.ntp.org
 /etc/init.d/ntpd start
 ```
-# 6 Data Nodes on 3 120GB JBOD
-
-# 4 Data Nodes on RAID 5
-
+# 6 Data Nodes w/ 3 120GB JBOD
 
 ## TestDFSIO:
 
