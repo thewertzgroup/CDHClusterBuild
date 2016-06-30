@@ -1,5 +1,21 @@
 # CDHClusterBuild
 
+## Passwordless SSH Configuration
+
+```
+[foo@FOO ~]# ssh-keygen -t rsa
+```
+```
+[foo@FOO ~]# ssh bar@BAR mkdir -p .ssh
+```
+```
+[foo@FOO ~]# cat .ssh/id_rsa.pub | ssh bar@BAR 'cat >> .ssh/authorized_keys'
+bar@BAR's password:
+```
+```
+[foo@FOO ~]# ssh bar@BAR
+```
+
 ## OS Configuration
 
 - Edit networking
