@@ -76,6 +76,20 @@ chkconfig ntpd on
 ntpdate pool.ntp.org
 /etc/init.d/ntpd start
 ```
+
+- Test Reverse DNS
+```
+http://www.cyberciti.biz/faq/how-to-test-or-check-reverse-dns/
+
+$ host ip-address-here
+$ host 75.126.43.235
+
+$ dig -x ip-address-here
+$ dig -x 75.126.153.206
+
+$ dig +noall +answer -x 75.126.153.206
+```
+
 # 6 Data Nodes w/ 3 120GB JBOD
 
 ## TestDFSIO:
